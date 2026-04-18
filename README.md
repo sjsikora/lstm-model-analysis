@@ -8,7 +8,7 @@ For this machine learning pipeline, the FordA timeseries dataset was used. This 
 
 ### Model
 
-A Transformer architecture was chosen for this task because its built-in attention mechanism allows the model to instantly communicate and exchange information with any two data points. This allows for more complex data transfer than similar models like an LSTM.
+A Transformer architecture was chosen for this task because its built-in attention mechanism allows the model to communicate and exchange information efficiently. This allows for more complex data transfer than similar models like an LSTM.
 
 In our pipeline, we treat the 500 timesteps of the engine noise signal as individual tokens. The Transformer analyzes the full sequence to figure out which parts of the noise profile relate to one another, and the model condenses this down into a single prediction: fault or no fault.
 
