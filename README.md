@@ -94,6 +94,36 @@ One model that fell short of expectations was the bidirectional LSTM. While the 
 
 The weakest results were seen in the CNN + LSTM hybrid and the LSTM-128 models. The intention behind the hybrid model was for the CNN to extract features; however, it is highly likely that there isn't much noise in the inputs for the CNN to filter out. Consequently, the CNN may have discarded useful information that the LSTM needed for accurate predictions. As for the LSTM-128, while it performed adequately, it underperformed relative to its parameter count (achieving a 0.1063 MSE with 69k parameters, compared to a 0.0986 MSE with 5k parameters). This suggests that a 69k parameter count was simply too large for this problem space.
 
+## Reproducing Results
+
+All notebooks were developed and run in **Google Colab**. Google Drive is used to persist trained models between sessions.
+
+### Prerequisites
+
+No local installation is required. You need:
+- A Google account with Google Drive
+- A Colab-compatible browser
+
+### Step 1 — Transformer Baseline
+
+Open `transformer/timeseries_classification_transformer.ipynb` in Colab and run all cells.
+
+### Step 2 — LSTM Baseline
+
+Open `LSTM/training/baseline.ipynb` in Colab and run all cells.
+
+
+### Step 3 — LSTM Experiments
+
+Open `LSTM/training/experiments.ipynb` in Colab.
+
+Run all cells. Each experiment trains sequentially with early stopping (patience=5, max 50 epochs).
+
+### Step 4 — Evaluation
+
+Open `LSTM/evalulation/evalulation.ipynb` in Colab.
+
+
 ## Additional Questions
 
 ### Which model did you find easier to understand and why?
